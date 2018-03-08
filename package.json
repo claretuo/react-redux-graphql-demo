@@ -1,0 +1,213 @@
+{
+  "name": "goopal-auth-management",
+  "description": "goopal auth system for the staff's auth ctrl",
+  "author": "clareTuo <tuobaocheng@new4g.com>",
+  "license": "MIT",
+  "version": "0.9.0",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.xiaojian.me"
+  },
+  "homepage": "https://gitlab.xiaojian.me",
+  "keywords": [
+    "react",
+    "isomorphic",
+    "universal",
+    "webpack",
+    "express",
+    "hot reloading",
+    "react-hot-reloader",
+    "redux",
+    "starter",
+    "boilerplate",
+    "babel"
+  ],
+  "main": "bin/server.js",
+  "scripts": {
+    "start": "concurrent --kill-others \"npm run start-prod\" \"npm run start-prod-api\"",
+    "start-prod": "better-npm-run start-prod",
+    "start-prod-api": "better-npm-run start-prod-api",
+    "build": "better-npm-run build",
+    "lint": "eslint -c .eslintrc src api",
+    "start-dev": "better-npm-run start-dev",
+    "start-dev-api": "better-npm-run start-dev-api",
+    "watch-client": "better-npm-run watch-client",
+    "dev": "concurrent --kill-others \"npm run watch-client\" \"npm run start-dev\" \"npm run start-dev-api\""
+  },
+  "betterScripts": {
+    "start-prod": {
+      "command": "node ./bin/server.js",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "production",
+        "PORT": 3000,
+        "APIPORT": 3030
+      }
+    },
+    "start-prod-api": {
+      "command": "node ./bin/api.js",
+      "env": {
+        "NODE_PATH": "./api",
+        "NODE_ENV": "production",
+        "APIPORT": 3030,
+        "NEW4G_HOST": "api.exmail.qq.com",
+        "NEW4G_APP_ID": "wmf64d45ae3ff3790e",
+        "NEW4G_APP_SECRET": "fpW6ihSmwNhkv_SMmathLU2qGzZAYX_SITHXitQJBmsJL41WqwgIz090zocdZuGo"
+      }
+    },
+    "start-dev": {
+      "command": "node ./bin/server.js",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "development",
+        "PORT": 3003,
+        "APIPORT": 3033,
+        "SERVICE_HOST": "59.110.226.63",
+        "SERVICE_PORT": 8080,
+        "SESSION_PORT": 6379
+      }
+    },
+    "start-dev-api": {
+      "command": "node ./bin/api.js",
+      "env": {
+        "NODE_PATH": "./api",
+        "NODE_ENV": "development",
+        "APIPORT": 3033,
+        "SERVICE_HOST": "59.110.226.63",
+        "SERVICE_PORT": 8080,
+        "SESSION_PORT": 6379,
+        "NEW4G_HOST": "api.exmail.qq.com",
+        "NEW4G_APP_ID": "wmf64d45ae3ff3790e",
+        "NEW4G_APP_SECRET": "fpW6ihSmwNhkv_SMmathLU2qGzZAYX_SITHXitQJBmsJL41WqwgIz090zocdZuGo"
+      }
+    },
+    "watch-client": {
+      "command": "node webpack/webpack-dev-server.js",
+      "env": {
+        "UV_THREADPOOL_SIZE": 100,
+        "NODE_PATH": "./src",
+        "PORT": 3000,
+        "APIPORT": 3030
+      }
+    },
+    "build": {
+      "command": "webpack --verbose --colors --display-error-details --config webpack/prod.config.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "dependencies": {
+    "antd": "2.4.2",
+    "babel-loader": "^6.2.7",
+    "babel-polyfill": "^6.9.2",
+    "babel-runtime": "^6.9.2",
+    "body-parser": "^1.14.1",
+    "compression": "^1.6.0",
+    "connect-redis": "^3.1.0",
+    "css-loader": "0.23.1",
+    "express": "^4.13.3",
+    "express-graphql": "^0.6.1",
+    "express-session": "^1.12.1",
+    "file-loader": "^0.9.0",
+    "glob": "^7.1.1",
+    "graphql": "^0.8.0",
+    "grpc-caller": "^0.1.2",
+    "hoist-non-react-statics": "^1.2.0",
+    "http-proxy": "^1.15.1",
+    "invariant": "^2.2.0",
+    "json-bigint": "^0.2.1",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.1",
+    "lodash": "^4.17.2",
+    "lru-memoize": "^1.0.0",
+    "map-props": "^1.0.0",
+    "moment": "^2.15.1",
+    "multireducer": "^2.0.0",
+    "mysql": "^2.11.1",
+    "node-fetch": "^1.6.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "piping": "^0.3.0",
+    "pretty-error": "^1.2.0",
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
+    "react-helmet": "^3.1.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.6",
+    "react-router-scroll": "^0.3.2",
+    "redux": "^3.5.2",
+    "redux-async-connect": "^1.0.0-rc4",
+    "redux-connect": "^3.0.0",
+    "scroll-behavior": "^0.8.1",
+    "sequelize": "^3.23.4",
+    "serialize-javascript": "^1.3.0",
+    "serve-favicon": "^2.3.0",
+    "socket.io": "^1.4.8",
+    "socket.io-client": "^1.4.8",
+    "superagent": "^3.1.0",
+    "url-loader": "^0.5.7",
+    "warning": "^3.0.0",
+    "webpack-isomorphic-tools": "2.5.8"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "assets-webpack-plugin": "^3.4.0",
+    "autoprefixer": "^6.3.7",
+    "babel-plugin-import": "^1.0.1",
+    "babel-core": "^6.9.0",
+    "babel-eslint": "^6.1.0",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-react-display-name": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-plugin-typecheck": "^3.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-node5": "^11.1.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-template": "^6.9.0",
+    "babel-types": "^6.9.0",
+    "babel-register": "^6.9.0",
+    "better-npm-run": "0.0.8",
+    "chai": "^3.3.0",
+    "clean-webpack-plugin": "^0.1.6",
+    "concurrently": "^0.1.1",
+    "copy-webpack-plugin": "^3.0.1",
+    "eslint": "1.10.3",
+    "eslint-config-airbnb": "0.1.0",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-import": "^0.8.0",
+    "eslint-plugin-react": "^3.5.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "font-awesome": "^4.4.0",
+    "font-awesome-webpack": "0.0.4",
+    "json-loader": "^0.5.4",
+    "mocha": "^2.3.3",
+    "node-sass": "^3.4.2",
+    "react-a11y": "^0.3.3",
+    "react-addons-test-utils": "^0.14.0",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.2.10",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.0.11",
+    "sass-loader": "^3.1.2",
+    "sinon": "^1.17.2",
+    "strip-loader": "^0.1.0",
+    "style-loader": "^0.13.0",
+    "timekeeper": "0.0.5",
+    "webpack": "^1.13.0",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-hot-middleware": "^2.10.0",
+    "webpack-middleware": "^1.5.1"
+  },
+  "engines": {
+    "node": ">=5.0 <7",
+    "npm": ">=3.3 <4"
+  }
+}

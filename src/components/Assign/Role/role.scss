@@ -1,0 +1,44 @@
+@import '../../../common.scss';
+.borderBox {
+  border: $border;
+  @include borderRadius(3px);
+}
+.inlineRow {
+  padding: $rowPadding;
+  color: $baseColor;
+  span.label {
+    display: inline-block;
+    margin-right: $commonMargin;
+    vertical-align: middle;
+    color: $colorGrey;
+  }
+}
+.commonHeight {
+}
+.treeOperations {
+  a {
+    margin-left: $commonMargin;
+  }
+}
+.operationBox {
+  display: inline-block;
+  vertical-align: middle;
+  .operation {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: $commonMarginLarge;
+  }
+}
+.treeList {
+  padding: 5px;
+  font-size: 12px;
+  li {
+    padding: 5px;
+    &:hover {
+      background-color: $hoverBackColor;
+    }
+  }
+}
+.disableTitle {
+  color: #ddd;
+}

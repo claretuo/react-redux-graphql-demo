@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.goopal.gen.logsys";
+option java_outer_classname = "LogProto";
+
+package logsys;
+
+service LogService {
+    rpc fetchAll(Query) returns (ListLogReply);
+    rpc add(LogRequest) returns (LogReply);
+}
+
+message Query {
+    string beginDate = 1;
+    string endDate = 2;
+    int32 pageIndex = 3;
+    int32 pageSize = 4;
+    LogRequest log = 5;
+}
+
+message LogRequest {
+    int64 id = 1;
+    int32 userId = 2;
+    string userName = 3;
+    int32 sysId = 4;
+    string sysName = 5;
+    int32 deptId = 6;
+    string deptName = 7;
+    string ipAddr = 8;
+    string opType = 9;
+    string reqId = 10;
+    string reqUrl = 11;
+    EnumReqMethodType reqMethod = 12;
+    string errMsg = 13;
+    string httpCode = 14;
+    EnumStatus status = 15;
+    string createTime = 16;
+    string reqBody = 17;
+}
+
+enum EnumReqMethodType {
+    EMPTY_REQ = 0;
+    GET = 1;
+    POST = 2;
+    PUT = 3;
+    DELETE = 4;
+}
+
+enum EnumStatus {
+    EMPTY = 0;
+    SUCCESS = 1;
+    FAIL = 2;
+}
+
+message LogReply {
+    int64 id = 1;
+    int32 userId = 2;
+    string userName = 3;
+    int32 sysId = 4;
+    string sysName = 5;
+    int32 deptId = 6;
+    string deptName = 7;
+    string ipAddr = 8;
+    string opType = 9;
+    string reqId = 10;
+    string reqUrl = 11;
+    EnumReqMethodType reqMethod = 12;
+    string errMsg = 13;
+    string httpCode = 14;
+    EnumStatus status = 15;
+    string createTime = 16;
+    string reqBody = 17;
+}
+
+message ListLogReply {
+    repeated LogReply data = 1;
+    int32 total = 2;
+}

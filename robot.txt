@@ -1,0 +1,6 @@
+/**
+* 权限系统爬虫协议
+**/
+
+User-agent: *
+Disallow: /

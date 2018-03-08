@@ -1,0 +1,116 @@
+@import "../../common.scss";
+.rowPadding {
+  padding: $rowPadding;
+  a {
+    display: inline-block;
+    max-width: 99%;
+    padding: 5px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $baseColor;
+    &.noActive {
+      color: $colorGrey;
+    }
+  }
+  &.active {
+    a {
+      color: $baseActiveColor;
+    }
+  }
+}
+.optButton {
+  text-align: right;
+  button {
+    margin-right: 5px;
+  }
+}
+.searchBtn {
+  cursor: pointer;
+}
+.filterTitle {
+  color: $colorGrey;
+}
+.container {
+  background: $colorWhiteGrey;
+  border: #e9e9e9 1px solid;
+  border-radius: 3px;
+  &>div {
+    border-bottom: $borderDash;
+    &:last-child {
+      border: none;
+    }
+  }
+}
+.icon {
+  @include ico;
+}
+.iconMale {
+  @include icoImage('./male.svg');
+}
+.iconFemale {
+  @include icoImage('./female.svg');
+}
+.paddingBox {
+  padding: $paddingDefault;
+}
+.popOverBox {
+  background: #fff;
+  &>div>div {
+      background: rgba(255, 247, 0, 0.11) !important;
+  }
+}
+.contentMenu {
+  a {
+    display: block;
+    color: $baseColor;
+    padding: 5px 10px;
+    &:hover {
+      background-color: $colorWhiteGrey;
+      color: $baseActiveColor;
+    }
+  }
+}
+.departOperations {
+  a {
+    margin-right: $commonMargin;
+    display: inline-block;
+    vertical-align: middle;
+    &:last-child {
+      margin: 0;
+    }
+    &:hover {
+      transform: scale(2);
+      animation: myfirst .2s;
+      -moz-animation: myfirst .2s;
+      -webkit-animation: myfirst .2s;
+      -o-animation: myfirst .2s;
+    }
+  }
+}
+
+@keyframes myfirst
+{
+  from {transform: scale(1);}
+  to {transform: scale(2);}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+  from {-moz-transform: scale(1);}
+  to {-moz-transform: scale(2);}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+  from {-webkit-transform: scale(1);}
+  to {-webkit-transform: scale(2);}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+  from {-o-transform: scale(1);}
+  to {-o-transform: scale(2);}
+}

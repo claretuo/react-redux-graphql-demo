@@ -1,0 +1,6 @@
+node_modules/
+**/*.yml
+**/webpack-assets.json
+**/npm-debug.log
+static/dist/*
+**/.DS_Store

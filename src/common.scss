@@ -1,0 +1,46 @@
+$rowPadding: 10px 0;
+$rowPaddingLarge: 20px 0;
+$rowMargin: 10px auto;
+$rowMarginLarge: 20px auto;
+$border: #e9e9e9 1px solid;
+$borderDash: #bbb 1px dashed;
+$borderDotted: #e9e9e9 1px dotted;
+$bigBorder: #57c5f7 2px solid;
+$baseFont: Hiragino Sans GB,Microsoft YaHei,sans-serif;
+$baseColor: #555;
+$colorGrey: #959595;
+$colorWhiteGrey: #f7f7f7;
+$baseActiveColor: #2db7f5;
+$paddingDefault: 20px 0;
+$bigFontSIze: 32px;
+$redColor: #a24;
+$blueCreateColor: #28a5dd;
+$commonMarginMini: 5px;
+$commonMargin: 10px;
+$commonMarginLarge: 20px;
+$commonPadding: 10px;
+$commonPaddingLarge: 10px;
+$commonHeight: 300px;
+$shadowColor: rgba(0,0,0,0.2);
+$hoverBackColor: #eaf8fe;
+@mixin ico($size: 16px) {
+  display: inline-block;
+  height: $size;
+  width: $size;
+  vertical-align: text-bottom;
+  margin-right: $commonMarginMini;
+}
+@mixin icoImage($url) {
+  background: url($url) center no-repeat;
+  background-size: 100% 100%;
+}
+@mixin borderRadius ($radius: 100%) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin boxShadow ($color: $baseColor) {
+  -moz-box-shadow: 0 1px 6px $color;
+  -webkit-box-shadow: 0 1px 6px $color;
+  box-shadow: 0 1px 6px $color;
+}

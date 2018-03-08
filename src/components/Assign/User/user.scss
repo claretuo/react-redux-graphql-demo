@@ -1,0 +1,29 @@
+@import '../../../common.scss';
+.borderBox {
+  border: $border;
+  @include borderRadius(3px);
+}
+.inlineRow {
+  padding: $rowPadding;
+  color: $baseColor;
+  span.label {
+    display: inline-block;
+    margin-right: $commonMargin;
+    vertical-align: middle;
+    color: $colorGrey;
+  }
+}
+.shadowBox {
+  @include borderRadius(3px);
+  @include boxShadow($shadowColor);
+}
+.commonHeight {
+}
+.treeOperations {
+  a {
+    margin-right: $commonMargin;
+  }
+}
+.hiddenBox {
+  overflow: hidden;
+}

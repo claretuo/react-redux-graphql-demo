@@ -1,0 +1,19 @@
+.ant-pwd-strength {
+  display: inline-block;
+  line-height: 32px;
+  height: 32px;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.ant-pwd-strength-item {
+  float: left;
+  margin-right: 1px;
+  margin-top: 12px;
+  width: 28%;
+  height: 8px;
+  line-height: 8px;
+  list-style: none;
+  background-color: #f3f3f3;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}

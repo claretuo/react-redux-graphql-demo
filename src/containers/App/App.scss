@@ -1,0 +1,34 @@
+@import "../../common.scss";
+.appContent {
+  padding: 10px;
+  position: absolute;
+  top: 90px;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+.breadcrumb {
+  padding-left: 15px;
+  padding-top: 10px;
+  position: absolute;
+  top: 50px;
+  left: 240px;
+  overflow: hidden;
+}
+.infoDetail {
+  width: 100%;
+  p {
+    width: 100%;
+    line-height: 26px;
+    &:hover {
+      background-color: #eaf8fe;
+    }
+    span {
+      display: inline-block;
+      vertical-align: baseline;
+      width: 30%;
+      padding-right: 10px;
+      text-align: right;
+    }
+  }
+}

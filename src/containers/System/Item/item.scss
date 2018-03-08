@@ -1,0 +1,42 @@
+@import '../../../common.scss';
+.borderBox {
+  border: $border;
+  @include borderRadius(3px);
+  padding: $rowPadding;
+}
+.treeOpration {
+  a {
+    margin-right: $commonMargin;
+  }
+}
+.contentBox {
+  display: inline-block;
+  vertical-align: middle;
+  width: 60%;
+  .roleItem {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    padding: $rowPadding;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: $commonMargin+20;
+      padding-right: $commonMargin;
+    }
+  }
+}
+.contentOperation {
+  display: inline-block;
+  padding: $rowPadding;
+  width: 38%;
+  vertical-align: top;
+  text-align: right;
+  a {
+    margin-right: $commonMargin;
+  }
+}
+.createBtn {
+  display: block;
+  margin: $rowMarginLarge;
+}
